@@ -65,6 +65,8 @@ In this specific example, it feels that the name `yyyymmddStr` actually conveys 
 
 Because Javascript is not a statically-typed language, it's not necessarily clear which structure `currentDate` might take without tracking down every possible parent scope or location that a variable named `currentDate` might be assigned. Is it a `Date()`? Is it a UNIX timestamp represented by a number? Is it a UNIX timestamp represented by a string? If it's a calendar date formatted as a string, is it formatted in American MM/DD/YYYY format, European DD/MM/YYYY format, or something else entirely?
 
+Javascript developers tend to work with dates fairly often _(in various formats, being either generated internally, entered by a user, or received from an API)_, and so something like `currentDateDDMMYYYY` would actually be a solid name that would combine the best of these two examples to convey a wider range of relevant info.
+
 JS IDEs _(and the Typescript server's support for inferring types in JS files)_ help out a bit here, but it doesn't smell right to crutch too hard on IDE assistance.
 
 **[⬆ back to top](#table-of-contents)**
