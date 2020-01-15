@@ -59,6 +59,14 @@ const yyyymmdstr = moment().format("YYYY/MM/DD");
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
+_**Cuyler's Nitpick, 1/14/20**_
+
+In this specific example, it feels that the name `yyyymmddStr` actually conveys the same amount of information that the name `currentDate` does, but just a different _kind_ of information.
+
+Because Javascript is not a statically-typed language, it's not necessarily clear which structure `currentDate` might take without tracking down every possible parent scope or location that a variable named `currentDate` might be assigned. Is it a `Date()`? Is it a UNIX timestamp represented by a number? Is it a UNIX timestamp represented by a string? If it's a calendar date formatted as a string, is it formatted in American MM/DD/YYYY format, European DD/MM/YYYY format, or something else entirely?
+
+JS IDEs _(and the Typescript server's support for inferring types in JS files)_ help out a bit here, but it doesn't smell right to crutch too hard on IDE assistance.
+
 **[⬆ back to top](#table-of-contents)**
 
 ### Use the same vocabulary for the same type of variable
